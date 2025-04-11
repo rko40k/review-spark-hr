@@ -25,6 +25,7 @@ import {
   XAxis, 
   YAxis 
 } from "recharts";
+import { Cell } from "@/components/ui/chart";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 

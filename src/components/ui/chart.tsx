@@ -1,4 +1,4 @@
 
-import { Cell } from "recharts";
+import { Cell as RechartsCell } from "recharts";
 
-export { Cell };
+export const Cell = RechartsCell;
