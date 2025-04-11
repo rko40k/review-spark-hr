@@ -10,7 +10,7 @@ import {
   SidebarMenuButton, 
   SidebarMenuItem 
 } from "@/components/ui/sidebar";
-import { BarChart3, Calendar, ClipboardList, Home, Settings, Users } from "lucide-react";
+import { BarChart3, Calendar, ClipboardList, Home, KanbanSquare, LayoutDashboard, Settings, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
@@ -18,6 +18,8 @@ const menuItems = [
   { title: "Dashboard", icon: Home, path: "/" },
   { title: "Employees", icon: Users, path: "/employees" },
   { title: "Reviews", icon: ClipboardList, path: "/reviews" },
+  { title: "Task Dashboard", icon: LayoutDashboard, path: "/tasks" },
+  { title: "Kanban Board", icon: KanbanSquare, path: "/kanban" },
   { title: "Calendar", icon: Calendar, path: "/calendar" },
   { title: "Reports", icon: BarChart3, path: "/reports" },
   { title: "Settings", icon: Settings, path: "/settings" },
