@@ -231,7 +231,8 @@ export const getTasksByPriority = (): Record<TaskPriority, number> => {
   }, initial);
 };
 
-export const getTasksByStatus = (): Record<TaskStatus, number> => {
+// Renamed to countTasksByStatus to avoid duplications
+export const countTasksByStatus = (): Record<TaskStatus, number> => {
   const initial: Record<TaskStatus, number> = {
     backlog: 0,
     todo: 0,
@@ -254,3 +255,36 @@ export const boards: TaskBoard[] = [
     columns: getTasksByStatus()
   }
 ];
+
+// Add missing functions needed by Dashboard.tsx
+export const countReviewsByStatus = (status: string): number => {
+  // Since this is a task tracking app, we'll return placeholder data
+  const mockData: Record<string, number> = {
+    draft: 5,
+    pending: 8,
+    completed: 12
+  };
+  return mockData[status] || 0;
+};
+
+export const getAverageOverallRating = (): number => {
+  // Return placeholder data for now
+  return 4.2;
+};
+
+export const getUpcomingReviews = (): any[] => {
+  // Return empty array for now
+  return [];
+};
+
+export const getAverageByCategoryId = (categoryId: string): number => {
+  // Return placeholder data based on categoryId
+  const mockRatings: Record<string, number> = {
+    "cat-001": 4.3,
+    "cat-002": 3.8,
+    "cat-003": 4.0,
+    "cat-004": 3.7,
+    "cat-005": 4.5
+  };
+  return mockRatings[categoryId] || 3.9;
+};

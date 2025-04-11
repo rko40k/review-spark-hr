@@ -6,20 +6,23 @@ import {
   CheckCircle2, 
   ClipboardList, 
   Clock, 
-  PenLine, 
   Star, 
-  TrendingUp, 
   Users 
 } from "lucide-react";
-import { employees, countReviewsByStatus, getAverageOverallRating, getUpcomingReviews, reviewCategories, getAverageByCategoryId } from "@/services/mockData";
-import { ReviewStatus } from "@/types";
+import { 
+  employees, 
+  reviewCategories, 
+  countReviewsByStatus, 
+  getAverageOverallRating, 
+  getUpcomingReviews, 
+  getAverageByCategoryId 
+} from "@/services/taskMockData";
 import { 
   Area, 
   AreaChart, 
   Bar, 
   BarChart as RechartsBarChart, 
   CartesianGrid, 
-  Legend, 
   ResponsiveContainer, 
   Tooltip, 
   XAxis, 
@@ -27,7 +30,6 @@ import {
 } from "recharts";
 import { Cell } from "@/components/ui/chart";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Separator } from "@/components/ui/separator";
 
 export default function Dashboard() {
   const draftReviewsCount = countReviewsByStatus("draft");
