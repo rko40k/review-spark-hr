@@ -1,10 +1,10 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getTasksByPriority, getTasksByStatus, tasks } from "@/services/taskMockData";
+import { countTasksByStatus, getTasksByPriority, tasks } from "@/services/taskMockData";
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 
 export function TaskStats() {
-  const tasksByStatus = getTasksByStatus();
+  const tasksByStatus = countTasksByStatus();
   const tasksByPriority = getTasksByPriority();
   
   const statusData = Object.entries(tasksByStatus).map(([status, count]) => ({
