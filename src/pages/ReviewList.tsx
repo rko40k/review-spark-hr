@@ -42,7 +42,7 @@ export default function ReviewList() {
     const employeeName = employee?.name || "";
     
     const matchesSearch = employeeName.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesStatus = statusFilter === "" || review.status === statusFilter;
+    const matchesStatus = statusFilter === "" || statusFilter === "all-statuses" || review.status === statusFilter;
     
     return matchesSearch && matchesStatus;
   });
@@ -81,7 +81,7 @@ export default function ReviewList() {
                   <SelectValue placeholder="All Statuses" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Statuses</SelectItem>
+                  <SelectItem value="all-statuses">All Statuses</SelectItem>
                   <SelectItem value="draft">Draft</SelectItem>
                   <SelectItem value="pending">Pending</SelectItem>
                   <SelectItem value="completed">Completed</SelectItem>

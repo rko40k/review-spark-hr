@@ -31,8 +31,8 @@ export default function EmployeeList() {
   const filteredEmployees = employees.filter(employee => {
     const matchesSearch = employee.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          employee.email.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesDepartment = departmentFilter === "" || employee.department === departmentFilter;
-    const matchesPosition = positionFilter === "" || employee.position === positionFilter;
+    const matchesDepartment = departmentFilter === "" || departmentFilter === "all-departments" || employee.department === departmentFilter;
+    const matchesPosition = positionFilter === "" || positionFilter === "all-positions" || employee.position === positionFilter;
     
     return matchesSearch && matchesDepartment && matchesPosition;
   });
@@ -71,7 +71,7 @@ export default function EmployeeList() {
                   <SelectValue placeholder="All Departments" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Departments</SelectItem>
+                  <SelectItem value="all-departments">All Departments</SelectItem>
                   {departments.map((department) => (
                     <SelectItem key={department} value={department}>
                       {department}
@@ -88,7 +88,7 @@ export default function EmployeeList() {
                   <SelectValue placeholder="All Positions" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Positions</SelectItem>
+                  <SelectItem value="all-positions">All Positions</SelectItem>
                   {positions.map((position) => (
                     <SelectItem key={position} value={position}>
                       {position}

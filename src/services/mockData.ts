@@ -1,5 +1,4 @@
-
-import { Employee, Review, ReviewCategory, ReviewCycle } from "@/types";
+import { Employee, Review, ReviewCycle, ReviewCategory, ReviewStatus } from "@/types";
 
 // Mock Departments
 export const departments = [
