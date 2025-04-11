@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getTasksByStatus } from "@/services/taskMockData";
+import { getTaskColumnsForKanban } from "@/services/taskMockData";
 import { Task, TaskColumn } from "@/types/task";
 import { useState } from "react";
 import { TaskCard } from "./TaskCard";
@@ -8,7 +8,7 @@ import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function KanbanBoard() {
-  const [columns, setColumns] = useState<TaskColumn[]>(getTasksByStatus());
+  const [columns, setColumns] = useState<TaskColumn[]>(getTaskColumnsForKanban());
   
   return (
     <div className="flex gap-4 overflow-x-auto pb-4 h-full">

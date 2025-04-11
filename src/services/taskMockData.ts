@@ -1,7 +1,19 @@
 
 import { Employee } from "@/types";
 import { Task, TaskBoard, TaskComment, TaskColumn, TaskPriority, TaskStatus } from "@/types/task";
-import { employees } from "./mockData";
+import { employees as importedEmployees, reviews } from "./mockData";
+
+// Export employees from mockData
+export const employees = importedEmployees;
+
+// Create and export reviewCategories
+export const reviewCategories = [
+  { id: "cat-001", name: "Technical Skills", description: "Programming, technical knowledge, and problem-solving abilities" },
+  { id: "cat-002", name: "Communication", description: "Verbal and written communication skills" },
+  { id: "cat-003", name: "Teamwork", description: "Ability to work effectively in a team environment" },
+  { id: "cat-004", name: "Initiative", description: "Self-motivation and proactive approach to work" },
+  { id: "cat-005", name: "Reliability", description: "Consistency, dependability, and meeting deadlines" }
+];
 
 // Helper function to get random employee ID
 const getRandomEmployeeId = (): string => {
@@ -178,7 +190,7 @@ export const tasks: Task[] = [
 ];
 
 // Function to group tasks by status for the Kanban board
-export const getTasksByStatus = (): TaskColumn[] => {
+export const getTaskColumnsForKanban = (): TaskColumn[] => {
   const columns: TaskColumn[] = [
     { id: "backlog", title: "Backlog", tasks: [] },
     { id: "todo", title: "To Do", tasks: [] },
@@ -252,7 +264,7 @@ export const boards: TaskBoard[] = [
   {
     id: "board-1",
     name: "Development Board",
-    columns: getTasksByStatus()
+    columns: getTaskColumnsForKanban()
   }
 ];
 

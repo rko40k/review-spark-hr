@@ -30,6 +30,7 @@ import {
 } from "recharts";
 import { Cell } from "@/components/ui/chart";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ReviewStatus } from "@/types";
 
 export default function Dashboard() {
   const draftReviewsCount = countReviewsByStatus("draft");
